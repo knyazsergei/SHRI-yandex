@@ -1,22 +1,9 @@
 <html>
 <head>
 <title>Табло авиакомании Иванкино</title>
-<!--
 <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
---!>
 </head>
 <body>
-<!--
-тип рейса (вылет/прилёт; например это может быть иконка);
-номер рейса;
-авиакомпания;
-логотип авиакомпании;
-тип воздушного судна;
-аэропорт назначения;
-плановое время вылета или прилёта;
-статус рейса (для вылетающих: регистрация, ожидание посадки, посадка закончена, вылетел; для прилетающих: по расписанию, летит, приземлился; для всех: задерживается до HH:MM, отменён);
-примечание (например, информация о код-шеринге с другими авиакомпаниями).
--->
 <div class="main">
 	<header>
 		<img src="./img/logo.png" />
@@ -162,39 +149,6 @@
 	</style>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/jquery.stickytableheaders.js"></script>
-	<script>
-		$(document).ready(function(){
-
-			for(var i = 0; i < 3; i++){
-        		$('tbody tr').clone().appendTo('table');
-    		}
-			
-			$('th, td').each(function() {
-				$(this).text($(this).attr('abbr'));
-			})
-
-			$('td').on('mouseenter mouseleave', function() {
-				var i = this.cellIndex;
-			
-				$(this)
-					.closest('table')
-					.find('tr')
-					.each(function() {
-					  $(this)
-					    .find('td')
-					    .eq(i)
-					    .toggleClass('hover');
-					});
-			});
-
-			$('.tablo').stickyTableHeaders();
-
-			$('td').click(function(){
-				name = $(this).parent('tr').children('td:eq(2)').text();
-				fullInfo = window.open('./fullinfo.html?num=' + name, '_blank', "menubar=no,location=no,resizable=no,scrollbars=yes,status=yes");
-				fullInfo.focus()
-			})
-		});
-	</script>
+	<script src="./js/script.js"></script>
 </body>
 </html>
