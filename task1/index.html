@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>Табло авиакомании Иванкино</title>
+<!--
+<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+--!>
+</head>
+<body>
+<!--
+тип рейса (вылет/прилёт; например это может быть иконка);
+номер рейса;
+авиакомпания;
+логотип авиакомпании;
+тип воздушного судна;
+аэропорт назначения;
+плановое время вылета или прилёта;
+статус рейса (для вылетающих: регистрация, ожидание посадки, посадка закончена, вылетел; для прилетающих: по расписанию, летит, приземлился; для всех: задерживается до HH:MM, отменён);
+примечание (например, информация о код-шеринге с другими авиакомпаниями).
+-->
+<div class="main">
+	<header>
+		<img src="./img/logo.png" />
+	</header>
+	<table class="tablo" summary="Табло аэропорта Иванкино">
+	<thead>
+	<tr class="header">
+		<th></th>
+		<th class="acompany">Авиакомпания</th>
+		<th abbr="Рейс">Номер рейса</th>
+		<th abbr="Тип ВС">Тип воздушного судна</th>
+		<th>Пункт назначения</th>
+		<th abbr="Вылет">Время вылета</th>
+		<th abbr="Прибытие">Время рибытия</th>
+		<th abbr="Статус">Статус</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><img src="./img/sortie.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/0.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>SU-1220</td>
+		<td>A-320</td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	<tr>
+		<td><img src="./img/arrival.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/1.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>KSU-622</td>
+		<td><span>Boeing </span>737<span>-800</span></td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	<tr>
+		<td><img src="./img/sortie.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/2.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>SU-1220</td>
+		<td>A-320</td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	<tr>
+		<td><img src="./img/sortie.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/3.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>SU-1220</td>
+		<td>A-320</td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	<tr>
+		<td><img src="./img/sortie.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/4.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>SU-1220</td>
+		<td>A-320</td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	<tr>
+		<td><img src="./img/sortie.png" alt="вылет" title="вылет" /></td>
+		<td><img class="alogo" src="./img/logos/5.gif" title="Аэрофлот - Российские Авиалинии" alt="Аэрофлот - Российские Авиалинии"/>Аэрофлот</td>
+		<td>SU-1220</td>
+		<td>A-320</td>
+		<td>Н Новгород</td>
+		<td title="16.08.2015">09:50</td>
+		<td title="16.08.2015">11:05</td>
+		<td>приземлился</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+	<style>
+	html, body {
+		padding:0;
+		margin:0;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.main {
+		width:80%;
+		margin:0 auto;
+		background-color:#fff;
+	}
+
+	header {
+		text-align:center;
+		margin:20px 0;
+	}
+
+	table {
+		width:100%;
+		border-collapse:collapse;
+	}
+
+	tbody {
+		position:relative;
+	}
+
+	td {
+		vertical-align:middle;
+		text-align:center;
+		cursor: pointer;
+	}
+
+	tr:nth-child(odd) { 
+		background-color: rgb(255, 254, 216); 
+	}
+
+	tr:hover, .hover {
+		background-color:rgba(245, 240, 87, 0.45);
+	}
+
+	.acompany {
+		width:120px;
+	}
+
+	.alogo {
+		width:110px;
+		height:30px;
+		display:block;
+		margin:5px auto;
+	}
+	@media screen and (max-width: 900px) {
+		tr td:nth-child(3), tr th:nth-child(3) {
+			display:none;
+		}
+	}
+	@media screen and (max-width: 800px) {
+		td span {
+			display:none;
+		}
+	}
+	</style>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.stickytableheaders.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			for(var i = 0; i < 3; i++){
+        		$('tbody tr').clone().appendTo('table');
+    		}
+			
+			$('th, td').each(function() {
+				$(this).text($(this).attr('abbr'));
+			})
+
+			$('td').on('mouseenter mouseleave', function() {
+				var i = this.cellIndex;
+			
+				$(this)
+					.closest('table')
+					.find('tr')
+					.each(function() {
+					  $(this)
+					    .find('td')
+					    .eq(i)
+					    .toggleClass('hover');
+					});
+			});
+
+			$('.tablo').stickyTableHeaders();
+
+			$('td').click(function(){
+				name = $(this).parent('tr').children('td:eq(2)').text();
+				fullInfo = window.open('./fullinfo.html?num=' + name, '_blank', "menubar=no,location=no,resizable=no,scrollbars=yes,status=yes");
+				fullInfo.focus()
+			})
+		});
+	</script>
+</body>
+</html>
