@@ -1,0 +1,13 @@
+html {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+#img_target {
+	width: 300px;
+	height: 100px;
+	background-color: #dedede;
+}
+
+#img_target.drop_here {
+	background-color: #7e7e7e;
+}

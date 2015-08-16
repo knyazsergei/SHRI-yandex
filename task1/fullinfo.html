@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+<div id="num" style="text-align:center">Полная информация о рейсе</div>
+<dl>
+	<dl>Авиакомпания</dl>
+	<dd>Аэрофлот России</dd>
+	<dl>Номер рейса</dl>
+	<dd id="numn"></dd>
+	<dl>Тип воздушного судна</dl>
+	<dd>Аэробус А-320</dd>
+</dl>
+<script>
+function $_GET(key) {
+	var s = window.location.search;
+	s = s.match(new RegExp(key + '=([^&=]+)'));
+	return s ? s[1] : false;
+}
+
+document.getElementById("num").innerHTML = 'Полная информация о рейсе ' + $_GET('num');
+document.getElementById("numn").innerHTML = $_GET('num');
+
+</script>
+</body>
+</html>
