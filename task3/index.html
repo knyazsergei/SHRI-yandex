@@ -7,12 +7,18 @@
 		<link rel="stylesheet" type="text/css" href="./css/styles.css" />
     </head>
     <body>
-		<div id="dropZone" style="width:200px;height:200px;background:#ccc">
+		<div id="dropZone" style="width:200px;height:200px;background:#ccc;background-size:contain">
 			
 			<input id="audio_file" type="file" accept="audio/*" />
 		</div>
-		<a href="#" id="playPause">Play</a><a href="#" id="stop">stop</a>
+		<div class="controls" style="display:none">
+			<div class="sound_name"></div>
+			<a href="#" id="playPause">Play</a><a href="#" id="stop">stop</a>
+			<img id="myimg" />
+			<div id="info"></div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="./js/musicmetadata.js"></script>
 		<script src="./js/script.js"></script>
     </body>
 </html>

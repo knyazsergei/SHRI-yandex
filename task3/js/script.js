@@ -3,7 +3,21 @@ $(document).ready(function() {
     //audio api
     var context = new window.AudioContext(); //
     var buffer, source, destination; 
-    var loadSoundFile = function(url) {
+    var loadSoundFile = function(file) {
+        //sticker
+        var mm = musicmetadata(file, function (err, result) {
+            if (err) throw err;
+                console.log(result);
+            if (result.picture.length > 0) {
+                var picture = result.picture[0];
+                var url = URL.createObjectURL(new Blob([picture.data], {'type': 'image/' + picture.format}));
+                $('#dropZone').css({'background-image':'url('+url+')'});
+            }
+            var div = document.getElementById('info');
+            div.innerText = result.title;
+        });
+        //web audio
+        url = URL.createObjectURL(file);
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.responseType = 'arraybuffer';
@@ -63,17 +77,15 @@ $(document).ready(function() {
         dropZone.addClass('drop');
         
         var file = event.dataTransfer.files[0];  
-        sound_url = URL.createObjectURL(file);
-        loadSoundFile(sound_url);
+        loadSoundFile(file);
 
     };
 
 
     //activator
     $('#audio_file').change(function(){
-        var files = this.files;
-        sound_url = URL.createObjectURL(files[0]);
-        loadSoundFile(sound_url);
+        var files = this.files;      
+        loadSoundFile(files[0]);
     });
     var isPlay = false;
     $('#playPause').click(function(){
